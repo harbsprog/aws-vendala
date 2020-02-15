@@ -65,12 +65,8 @@ class MeliController extends Controller
         ];
 
         try {
-            for ($i = 0; $i < 50; $i++) {
-                $result = $client->sendMessage($params);
-                dump('DISPATCHED');
-            }
             $result = $client->sendMessage($params);
-            var_dump($result);
+            dump('DISPATCHED');
         } catch (AwsException $e) {
             // output error message if fails
             // error_log($e->getMessage());
