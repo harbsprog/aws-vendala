@@ -40,11 +40,11 @@ class MeliController extends Controller
                     'StringValue' => $request->categoria
                 ],
                 "preco" => [
-                    'DataType' => "String",
+                    'DataType' => "Number",
                     'StringValue' => $request->preco
                 ],
                 "quantidade" => [
-                    'DataType' => "String",
+                    'DataType' => "Number",
                     'StringValue' => $request->quantidade
                 ],
                 "descricao" => [
@@ -66,7 +66,6 @@ class MeliController extends Controller
 
         try {
             $result = $client->sendMessage($params);
-            var_dump($result);
         } catch (AwsException $e) {
             // output error message if fails
             // error_log($e->getMessage());
