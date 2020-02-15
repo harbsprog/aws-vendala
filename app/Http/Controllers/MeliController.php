@@ -33,31 +33,31 @@ class MeliController extends Controller
             'MessageAttributes' => [
                 "titulo" => [
                     'DataType' => "String",
-                    'StringValue' => $request->get('titulo')
+                    'StringValue' => $request->titulo
                 ],
                 "categoria" => [
                     'DataType' => "String",
-                    'StringValue' => $request->get('categoria')
+                    'StringValue' => $request->categoria
                 ],
                 "preco" => [
                     'DataType' => "String",
-                    'StringValue' => $request->get('preco')
+                    'StringValue' => $request->preco
                 ],
                 "quantidade" => [
                     'DataType' => "String",
-                    'StringValue' => $request->get('quantidade')
+                    'StringValue' => $request->quantidade
                 ],
                 "descricao" => [
                     'DataType' => "String",
-                    'StringValue' => $request->get('descricao')
+                    'StringValue' => $request->descricao
                 ],
                 "fotos" => [
                     'DataType' => "String",
-                    'StringValue' => json_encode($request->get('fotos'))
+                    'StringValue' => json_encode($request->fotos)
                 ],
                 "token" => [
                     'DataType' => "String",
-                    'StringValue' => $request->get('token')
+                    'StringValue' => $request->token
                 ]
             ],
             'MessageBody' => "Graziani Imports Blau Blau",
@@ -66,7 +66,7 @@ class MeliController extends Controller
 
         try {
             $result = $client->sendMessage($params);
-            dump('DISPATCHED');
+            var_dump($result);
         } catch (AwsException $e) {
             // output error message if fails
             // error_log($e->getMessage());
