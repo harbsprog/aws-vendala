@@ -16,6 +16,6 @@ class MeliController extends Controller
 
     public function sendSQS()
     {
-        dd('funcionando');
+        dd('funcionando BLAU');
     }
 }
