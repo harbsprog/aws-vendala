@@ -65,7 +65,7 @@ class MeliController extends Controller
         ];
 
         try {
-            return $client->sendMessage($params);
+            $result =  $client->sendMessage($params);
         } catch (AwsException $e) {
             dump($e->getMessage());
         }
