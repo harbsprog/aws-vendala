@@ -20,7 +20,6 @@ class MeliController extends Controller
 
     public function sendSQS(Request $request)
     {
-        dd($request->titulo);
         $client = SqsClient::factory([
             'credentials' => [
                 'key' => env('AWS_ACCESS_KEY'),
@@ -66,10 +65,10 @@ class MeliController extends Controller
         ];
 
         try {
-            $result = $client->sendMessage($params);
+            return $client->sendMessage($params);
         } catch (AwsException $e) {
             // output error message if fails
-            error_log($e->getMessage());
+            // error_log($e->getMessage());
             dump($e->getMessage());
         }
     }
