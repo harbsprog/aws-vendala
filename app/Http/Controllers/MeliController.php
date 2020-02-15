@@ -40,11 +40,11 @@ class MeliController extends Controller
                     'StringValue' => $request->categoria
                 ],
                 "preco" => [
-                    'DataType' => "Number",
+                    'DataType' => "String",
                     'StringValue' => $request->preco
                 ],
                 "quantidade" => [
-                    'DataType' => "Number",
+                    'DataType' => "String",
                     'StringValue' => $request->quantidade
                 ],
                 "descricao" => [
